@@ -1,0 +1,32 @@
+{
+    "name": "app-env",
+    "version": "1.1.1",
+    "description": "APP_ENV replace for NODE_ENV",
+    "main": "index.js",
+    "scripts": {
+        "build": "node src/env-generator env=prod",
+        "preview": "node src/env-generator env=preview",
+        "testing": "node src/env-generator env=dev"
+    },
+    "bin": {
+        "app": "app",
+        "pre": "pre",
+        "dev": "dev"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xgqfrms/app-env.git"
+    },
+    "keywords": [
+        "APP_ENV",
+        "ENV",
+        "NODE_ENV",
+        "APP"
+    ],
+    "author": "xgqfrms",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/xgqfrms/app-env/issues"
+    },
+    "homepage": "https://github.com/xgqfrms/app-env#readme"
+}
