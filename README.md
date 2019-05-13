@@ -69,6 +69,10 @@ $ node src/env-generator env=dev
 $ node index env=dev
 # only will create env.js in root folder!
 
+
+$ npm info app-node-env version
+# 1.1.5
+
 ```
 ## module.exports
 

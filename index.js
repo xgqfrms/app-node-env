@@ -17,7 +17,9 @@
 
 const fs = require("fs");
 
-const env = process.argv.slice(2)[0].substr(4);
+const arges = process.argv.slice(2) || [];
+const env = arges[0].substr(4);
+
 const filename = "./env.js";
 
 const APP_NODE_ENV = () => {
