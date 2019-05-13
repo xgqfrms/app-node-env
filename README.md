@@ -6,6 +6,16 @@ https://app-node-env.xgqfrms.xyz
 
 https://www.npmjs.com/package/app-node-env
 
+```sh
+
+$ npm i -D app-node-env
+# OR
+$ yarn add -D app-node-env
+
+
+```
+
+
 
 ## npm adduser
 
