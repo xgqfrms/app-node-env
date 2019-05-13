@@ -16,7 +16,6 @@ $ yarn add -D app-node-env
 ```
 
 
-
 ## npm adduser
 
 https://docs.npmjs.com/cli/adduser
@@ -69,6 +68,13 @@ $ node src/env-generator env=dev
 # OR
 $ node index env=dev
 # only will create env.js in root folder!
+
+```
+
+```js
+// ANE
+import ANE from "./src/env-generator";
+export default ANE;
 
 ```
 
