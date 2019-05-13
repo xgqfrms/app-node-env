@@ -55,3 +55,26 @@ $ node index env=dev
 # only will create env.js in root folder!
 
 ```
+
+
+https://www.npmjs.com/package/app-node-env
+
+## name conflict
+
+https://stackoverflow.com/a/46766267/5934465
+
+https://github.com/npm/npm/issues/8561
+
+https://www.npmjs.com/package/app-env
+https://github.com/chipto/app-env
+
+https://www.npmjs.com/package/node-env
+https://github.com/Raynos/node-env
+
+
+
+
+
+
+
+
