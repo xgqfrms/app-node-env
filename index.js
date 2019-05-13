@@ -39,5 +39,9 @@ const APP_NODE_ENV = () => {
     });
 };
 
-export default APP_NODE_ENV;
+// export default APP_NODE_ENV;
+
+module.exports = APP_NODE_ENV;
+// ES6
+module.exports.default = APP_NODE_ENV;
 

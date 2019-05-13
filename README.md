@@ -70,6 +70,17 @@ $ node index env=dev
 # only will create env.js in root folder!
 
 ```
+## module.exports
+
+```js
+
+// export default APP_NODE_ENV;
+
+module.exports = APP_NODE_ENV;
+// ES6
+module.exports.default = APP_NODE_ENV;
+
+```
 
 ```js
 // ANE
