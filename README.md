@@ -1,22 +1,11 @@
-# app-env
+# app-node-env
 
-> APP_ENV & one cli tools for customize env of APP
+> APP_ENV & one cli tools for customize env of APP's NODE_ENV
 
-https://app-env.xgqfrms.xyz
+https://app-node-env.xgqfrms.xyz
 
-## npm publish
+https://www.npmjs.com/package/app-node-env
 
-https://docs.npmjs.com/cli/publish
-
-```sh
-# npm publish [<tarball>|<folder>] [--tag <tag>] [--access <public|restricted>] [--otp otpcode] [--dry-run]
-
-# Publishes '.' if no argument supplied
-# Sets tag 'latest' if no --tag specified
-
-$ npm publish
-
-```
 
 ## npm adduser
 
@@ -47,6 +36,23 @@ https://www.cnblogs.com/xgqfrms/p/10648848.html
 
 
 
+## npm publish
+
+https://docs.npmjs.com/cli/publish
+
+```sh
+# npm publish [<tarball>|<folder>] [--tag <tag>] [--access <public|restricted>] [--otp otpcode] [--dry-run]
+
+# Publishes '.' if no argument supplied
+# Sets tag 'latest' if no --tag specified
+
+$ npm publish
+
+```
+
+
+## demo
+
 ```sh
 # node
 $ node src/env-generator env=dev
@@ -56,8 +62,6 @@ $ node index env=dev
 
 ```
 
-
-https://www.npmjs.com/package/app-node-env
 
 ## name conflict
 
@@ -72,7 +76,9 @@ https://www.npmjs.com/package/node-env
 https://github.com/Raynos/node-env
 
 
+> OK
 
+https://www.npmjs.com/package/app-node-env
 
 
 
