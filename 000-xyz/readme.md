@@ -1,15 +1,21 @@
+# package
+
+
+```json
+
 {
     "name": "app-node-env",
-    "version": "1.1.11",
+    "version": "1.1.9",
     "description": "APP_ENV replace for NODE_ENV",
+    "main": "index.js",
     "scripts": {
         "build": "node index env=prod",
         "preview": "node index env=preview",
-        "testing": "node index env=dev",
-        "ane": "ane"
+        "testing": "node index env=dev"
     },
-    "bin": {
-        "ane": "ane"
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xgqfrms/app-node-env.git"
     },
     "keywords": [
         "APP_ENV",
@@ -20,7 +26,10 @@
     "author": "xgqfrms",
     "license": "MIT",
     "bugs": {
-        "url": "https://app-node-env.xgqfrms.xyz/issues"
+        "url": "https://github.com/xgqfrms/app-node-env/issues"
     },
-    "homepage": "https://app-node-env.xgqfrms.xyz/index.html#readme"
+    "homepage": "https://github.com/xgqfrms/app-node-env#readme"
 }
+
+
+```

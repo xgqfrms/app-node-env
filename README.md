@@ -6,12 +6,20 @@ https://app-node-env.xgqfrms.xyz
 
 https://www.npmjs.com/package/app-node-env
 
+
+```sh
+
+$ npm i -g app-node-env
+# OR
+$ yarn global add app-node-env
+
+```
+
 ```sh
 
 $ npm i -D app-node-env
 # OR
 $ yarn add -D app-node-env
-
 
 ```
 
@@ -60,6 +68,18 @@ $ npm publish
 ```
 
 
+
+```sh
+
+"bin": {
+    "app": "app",
+    "pre": "pre",
+    "dev": "dev"
+},
+
+```
+
+
 ## demo
 
 ```sh
@@ -72,6 +92,9 @@ $ node index env=dev
 
 $ npm info app-node-env version
 # 1.1.5
+
+$ npm whoami
+# xgqfrms
 
 ```
 ## module.exports
@@ -97,7 +120,6 @@ export default ANE;
 ## name conflict
 
 https://stackoverflow.com/a/46766267/5934465
-
 https://github.com/npm/npm/issues/8561
 
 https://www.npmjs.com/package/app-env
@@ -110,6 +132,15 @@ https://github.com/Raynos/node-env
 > OK
 
 https://www.npmjs.com/package/app-node-env
+
+
+## npm publish tips
+
+
+1. cli tools no need `module.exports`
+
+2. only js modules need `module.exports`
+
 
 
 

@@ -18,11 +18,24 @@
 const fs = require("fs");
 
 const arges = process.argv.slice(2) || [];
-const env = arges[0].substr(4);
+
+console.log(`process.argv =`, process.argv);
+console.log(`arges =`, arges, typeof(arges));
+console.log(`arges[0] =`, arges[0], typeof(arges[0]));
+
+let env = "";
+if (!arges[0]) {
+    arges[0] = "";
+} else {
+    env = arges[0].substr(4);
+}
+
+// const env = arges[0].substr(4);
+// const env = arges[0].substr(4);
 
 const filename = "./env.js";
 
-const APP_NODE_ENV = () => {
+const APP_NODE_ENV = (env = ``) => {
     fs.open(filename, "r", (err, fd) => {
         console.log("APP_ENV =", env);
         if (err) {
@@ -42,6 +55,8 @@ const APP_NODE_ENV = () => {
 };
 
 // export default APP_NODE_ENV;
+
+APP_NODE_ENV(env);
 
 module.exports = APP_NODE_ENV;
 // ES6
