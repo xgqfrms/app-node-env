@@ -1,6 +1,6 @@
 {
     "name": "app-node-env",
-    "version": "1.1.12",
+    "version": "1.2.1",
     "description": "APP_ENV replace for NODE_ENV",
     "scripts": {
         "ane": "ane"
