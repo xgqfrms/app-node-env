@@ -4,10 +4,6 @@
 const fs = require("fs");
 const arges = process.argv.slice(2) || [];
 
-console.log(`process.argv =`, process.argv);
-console.log(`arges =`, arges, typeof(arges));
-console.log(`arges[0] =`, arges[0], typeof(arges[0]));
-
 let env = "";
 if (!arges[0]) {
     arges[0] = "";
@@ -18,7 +14,6 @@ if (!arges[0]) {
 const filename = "./env.js";
 
 fs.open(filename, "r", (err, fd) => {
-    console.log("APP_ENV =", env);
     if (err) {
         fs.writeFile(filename, `const APP_ENV = "${env}";\nexport default APP_ENV;`, (err, fd) => {
             if(err) {
