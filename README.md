@@ -25,3 +25,12 @@ $ ane env=dev
 $ node ane env=dev
 
 ```
+
+# deploy.sh
+
+```sh
+#!/bin/bash
+
+#!/usr/bin/env bash
+
+```
