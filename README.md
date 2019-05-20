@@ -34,3 +34,27 @@ $ node ane env=dev
 #!/usr/bin/env bash
 
 ```
+
+## CI
+
+> travis-ci
+
+https://travis-ci.org/xgqfrms/app-node-env/builds
+
+https://docs.travis-ci.com/user/getting-started/
+
+> `.travis.yml `
+
+```yaml
+language: node_js
+
+```
+
+
+```
+
+https://docs.travis-ci.com/user/tutorial/#selecting-a-different-programming-language
+
+
+
+
