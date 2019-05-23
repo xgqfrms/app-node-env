@@ -49,6 +49,9 @@ $ npm login
 
 ```
 
+
+![](https://img2018.cnblogs.com/blog/740516/201905/740516-20190523003213470-66050157.png)
+
 https://www.cnblogs.com/xgqfrms/p/10648848.html
 
 
