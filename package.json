@@ -1,20 +1,31 @@
 {
     "name": "app-node-env",
-    "version": "1.2.2",
+    "version": "1.2.4",
     "description": "APP_ENV replace for NODE_ENV",
-    "scripts": {
-        "ane": "ane"
-    },
-    "bin": {
-        "ane": "ane"
-    },
+    "author": "xgqfrms",
+    "license": "MIT",
     "keywords": [
         "APP_ENV",
         "ENV",
         "NODE_ENV",
         "APP"
     ],
-    "author": "xgqfrms",
-    "license": "MIT",
-    "homepage": "https://app-node-env.xgqfrms.xyz/index.html#readme"
+    "scripts": {
+        "ane": "ane"
+    },
+    "bin": {
+        "ane": "ane"
+    },
+    "files": [
+        "ane",
+        "env.js"
+    ],
+    "homepage": "https://app-node-env.xgqfrms.xyz/index.html#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xgqfrms/hui-cli.git"
+    },
+    "bugs": {
+        "url": "https://github.com/xgqfrms/hui-cli/issues"
+    }
 }

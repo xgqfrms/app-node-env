@@ -1,5 +1,16 @@
 #!/usr/bin/env node
 
+/**
+ *
+ * @author xgqfrms
+ * @license MIT
+ * @copyright xgqfrms 2019.05.12
+ *
+ * @description APP_ENV Genarator
+ * @augments
+ * @example node env-generator.js env=dev
+ *
+ */
 
 const fs = require("fs");
 const arges = process.argv.slice(2) || [];
