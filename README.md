@@ -18,11 +18,24 @@ $ yarn global add app-node-env
 
 ## Usage
 
+> cli
+
 ```sh
 # node
 $ ane env=dev
 # OR
 $ node ane env=dev
+
+```
+
+> js module
+
+```js
+const ANE = require("app-node-env");
+
+(() => {
+    ANE();
+})();
 
 ```
 

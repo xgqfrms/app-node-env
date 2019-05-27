@@ -1,6 +1,6 @@
 {
     "name": "app-node-env",
-    "version": "1.2.5",
+    "version": "1.3.3",
     "description": "APP_ENV replace for NODE_ENV",
     "author": "xgqfrms",
     "license": "MIT",
@@ -16,7 +16,10 @@
     "bin": {
         "ane": "ane"
     },
+    "main": "src/index.js",
     "files": [
+        "src/index.js",
+        "testing/*",
         "ane",
         "env.js"
     ],
