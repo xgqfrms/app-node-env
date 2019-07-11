@@ -1,6 +1,6 @@
 {
     "name": "app-node-env",
-    "version": "1.3.3",
+    "version": "1.3.4",
     "description": "APP_ENV replace for NODE_ENV",
     "author": "xgqfrms",
     "license": "MIT",
