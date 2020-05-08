@@ -56,14 +56,22 @@ https://travis-ci.org/xgqfrms/app-node-env/builds
 
 https://docs.travis-ci.com/user/getting-started/
 
+
 > `.travis.yml `
 
-```yaml
+
+```yml
 language: node_js
 
 ```
 
 https://docs.travis-ci.com/user/tutorial/#selecting-a-different-programming-language
+
+## Travis CI
+
+https://travis-ci.org/github/xgqfrms/app-node-env
+
+https://www.cnblogs.com/xgqfrms/p/12851281.html
 
 
 
