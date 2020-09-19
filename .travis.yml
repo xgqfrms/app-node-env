@@ -4,4 +4,8 @@ node:
 npm:
 - 6.9.0
 os:
-- macOS Mojave 10.14.3
+- linux
+- osx
+- windows
+# - macOS Mojave 10.14.3
+# Value is not accepted. Valid values: "osx", "linux", "windows".(1)

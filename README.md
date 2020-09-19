@@ -6,6 +6,8 @@ https://app-node-env.xgqfrms.xyz
 
 https://www.npmjs.com/package/app-node-env
 
+https://github.com/xgqfrms/app-node-env
+
 
 ```sh
 
@@ -28,9 +30,10 @@ $ node ane env=dev
 
 ```
 
-> js module
+> node.js module
 
 ```js
+// CJS
 const ANE = require("app-node-env");
 
 (() => {
@@ -39,7 +42,7 @@ const ANE = require("app-node-env");
 
 ```
 
-# deploy.sh
+## deploy.sh
 
 ```sh
 #!/bin/bash
