@@ -13,26 +13,43 @@
  */
 
 const fs = require("fs");
-const arges = process.argv.slice(2) || [];
-
-let env = "";
-if (!arges[0]) {
-    arges[0] = "";
-} else {
-    env = arges[0].substr(4);
-}
+const args = process.argv.slice(2) || [];
 
 const filename = "./env.js";
 
+let key = "";
+let env = "";
+if (!args[0]) {
+  args[0] = "";
+} else {
+    console.log();
+    // env = args[0].substr(4);
+    const tempArr = args[0].split('=');
+    key = tempArr[0] ?? 'APP_ENV';
+    env = tempArr[1];
+}
+
+const defaultTemplate = `
+// default
+const ${key} = "${env}";\n
+export default ${key};\n
+`;
+
+const envTemplate = `
+// 🎉
+const ${key} = "${env}";\n
+export default ${key};\n
+`;
+
 fs.open(filename, "r", (err, fd) => {
     if (err) {
-        fs.writeFile(filename, `const APP_ENV = "${env}";\nexport default APP_ENV;`, (err, fd) => {
+        fs.writeFile(filename, defaultTemplate, (err, fd) => {
             if(err) {
                 console.log(`writeFile err =`, err);
             }
         });
     } else {
-        fs.writeFile(filename, `const APP_ENV = "${env}";\nexport default APP_ENV;`, (err, fd) => {
+        fs.writeFile(filename, envTemplate, (err, fd) => {
             if(err) {
                 console.log(`writeFile err =`, err);
             }
