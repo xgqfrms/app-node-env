@@ -12,7 +12,10 @@
  *
  */
 
+const packageInfo = require("./package.json");
+
 const fs = require("fs");
+
 const args = process.argv.slice(2) || [];
 
 const filename = "./env.js";
@@ -35,8 +38,14 @@ let key = "";
 let env = "";
 if (!args[0]) {
   args[0] = "";
+  // console.log('ane version =', packageInfo.version);
+  // echo `version = ${packageInfo.version}`;
+  console.log(`version = ${packageInfo.version}`);
+  key = 'APP_ENV';
+  env = 'dev';
 } else {
-  console.log();
+  // echo `version = ${packageInfo.version}`;
+  // console.log('ane version =', packageInfo, packageInfo.version);
   // env = args[0].substr(4);
   const tempArr = args[0].split('=');
   // key = tempArr[0] ?? 'APP_ENV';
@@ -44,17 +53,21 @@ if (!args[0]) {
   env = isPureNumber(tempArr[1]) ? parseInt(tempArr[1]) : tempArr[1];
 }
 
-const defaultTemplate = `
-// default
-const ${key} = ${env};\n
-export default ${key};\n
-`;
+const defaultTemplate = `// default\nconst ${key} = ${env};export default ${key};\n`;
 
-const envTemplate = `
-// 🎉
-const ${key} = ${env};\n
-export default ${key};\n
-`;
+const envTemplate = `// 🎉\nconst ${key} = ${env};\nexport default ${key};\n`;
+
+// const defaultTemplate = `
+// // default
+// const ${key} = ${env};
+// export default ${key};
+// `;
+
+// const envTemplate = `
+// // 🎉
+// const ${key} = ${env};
+// export default ${key};
+// `;
 
 fs.open(filename, "r", (err, fd) => {
   if (err) {

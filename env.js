@@ -1,2 +1,3 @@
-const APP_ENV = "app";
+// 🎉
+const APP_ENV = dev;
 export default APP_ENV;
