@@ -1,3 +1,3 @@
 // 🎉
-const APP_ENV = dev;
-export default APP_ENV;
+const PORT = 'dev';
+export default PORT;

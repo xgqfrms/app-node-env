@@ -26,7 +26,7 @@ const isPureNumber = (str = '') => {
   // [...''.padEnd(10, 'x')].map((item, i) => `${i}`);
   // (10) ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
   const numberDict = [...''.padEnd(10, 'x')].map((item, i) => `${i}`);
-  const arr = str.split('');
+  const arr = `${str}`.split('');
   return arr.every(item => numberDict.includes(item));
   // arr.every(item => {
   //   console.log('item', item, dict, dict.includes(item))
@@ -51,11 +51,26 @@ if (!args[0]) {
   // key = tempArr[0] ?? 'APP_ENV';
   key = tempArr[0] || 'APP_ENV';
   env = isPureNumber(tempArr[1]) ? parseInt(tempArr[1]) : tempArr[1];
+  // console.log('isPureNumber(tempArr[1])', isPureNumber(tempArr[1]), env, typeof env);
 }
 
-const defaultTemplate = `// default\nconst ${key} = ${env};export default ${key};\n`;
+// env = isPureNumber(env) ? env : `${env}`;
+// env = isPureNumber(env) ? env : env.toString();
 
-const envTemplate = `// 🎉\nconst ${key} = ${env};\nexport default ${key};\n`;
+// console.log('env =', env, typeof env);
+
+let defaultTemplate = ``;
+let envTemplate = ``;
+if (isPureNumber(env)) {
+  defaultTemplate = `// default\nconst ${key} = ${env};export default ${key};\n`;
+  envTemplate = `// 🎉\nconst ${key} = ${env};\nexport default ${key};\n`;
+} else {
+  defaultTemplate = `// default\nconst ${key} = '${env}';export default ${key};\n`;
+  envTemplate = `// 🎉\nconst ${key} = '${env}';\nexport default ${key};\n`;
+}
+
+// console.log('defaultTemplate =', defaultTemplate);
+// console.log('envTemplate =', envTemplate);
 
 // const defaultTemplate = `
 // // default
