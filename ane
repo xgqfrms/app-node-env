@@ -16,7 +16,20 @@ const packageInfo = require("./package.json");
 
 const fs = require("fs");
 
-const args = process.argv.slice(2) || [];
+const {
+  version,
+  argv,
+  // versions,
+  // arch,
+  // platform,
+  // env,
+} = process;
+
+// v12.18.0
+console.log('\n🚀 your node.js version =', version.substr(1).split('.')[0]);
+
+// const args = process.argv.slice(2) || [];
+const args = argv.slice(2) || [];
 
 const filename = "./env.js";
 
