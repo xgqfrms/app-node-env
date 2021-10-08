@@ -62,10 +62,10 @@ if (!args[0]) {
 let defaultTemplate = ``;
 let envTemplate = ``;
 if (isPureNumber(env)) {
-  defaultTemplate = `// default\nconst ${key} = ${env};export default ${key};\n`;
+  defaultTemplate = `// default\nconst ${key} = ${env};\nexport default ${key};\n`;
   envTemplate = `// 🎉\nconst ${key} = ${env};\nexport default ${key};\n`;
 } else {
-  defaultTemplate = `// default\nconst ${key} = '${env}';export default ${key};\n`;
+  defaultTemplate = `// default\nconst ${key} = '${env}';\nexport default ${key};\n`;
   envTemplate = `// 🎉\nconst ${key} = '${env}';\nexport default ${key};\n`;
 }
 
