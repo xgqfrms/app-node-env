@@ -1,3 +1,3 @@
 // 🎉
-const ENV_PORT = 666;
-export default ENV_PORT;
+const PORT_ENV = 666;
+export default PORT_ENV;

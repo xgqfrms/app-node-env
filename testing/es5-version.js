@@ -1,5 +1,5 @@
 
-// import ENV_PORT from './env.js';
-const ENV_PORT = require('./es5-env.js');
+// import PORT_ENV from './env.js';
+const PORT_ENV = require('./es5-env.js');
 
-console.log('ENV_PORT =', ENV_PORT);
+console.log('PORT_ENV =', PORT_ENV);

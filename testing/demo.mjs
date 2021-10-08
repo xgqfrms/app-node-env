@@ -15,21 +15,21 @@
 
 /*
 
-import ENV_PORT from "./env.js";
+import PORT_ENV from "./env.js";
 
-console.log('ENV_PORT =', ENV_PORT);
+console.log('PORT_ENV =', PORT_ENV);
 
 // SyntaxError: Unexpected token 'export'
 
 */
 
-import ENV_PORT from "./env.mjs";
-console.log('ENV_PORT =', ENV_PORT);
+import PORT_ENV from "./env.mjs";
+console.log('PORT_ENV =', PORT_ENV);
 
 
 /*
 
 // ExperimentalWarning: The ESM module loader is experimental.
-ENV_PORT = 666
+PORT_ENV = 666
 
 */

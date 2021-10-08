@@ -106,6 +106,7 @@ if (isPureNumber(env)) {
 // const ${key} = ${env};
 // export default ${key};
 // `;
+console.log('\n🎮 creating...');
 
 fs.open(filename, "r", (err, fd) => {
   if (err) {
@@ -122,4 +123,6 @@ fs.open(filename, "r", (err, fd) => {
     });
   }
 });
+
+console.log('\n🎉 finished!');
 

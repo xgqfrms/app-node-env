@@ -32,20 +32,61 @@ $ node ane env=dev
 
 ## demos
 
+1. custom webpack devServer port
 
 ```sh
-# install
+# global install
 $ yarn global add app-node-env
-# ENV_PORT for webpack
-$ ane ENV_PORT=8090
+
+# PORT_ENV for webpack
+$ ane PORT_ENV=8090
 
 ```
 
-webpack.config.js
+```js
+// webpack.config.js
+const PORT_ENV = require('./env.js');
 
-1. control env
+console.log('PORT_ENV =', PORT_ENV);
+
+// const ip = require('ip');
+// const hostIp = ip.address();
+const config = {
+  // ...
+  devServer: {
+    // ...
+    // host: hostIp,
+    port: PORT_ENV || 8080,
+    proxy: [
+      {
+        context: ['/web/api/'],
+        // dev
+        target: 'https://web-dev.xgqfrms.xyz',
+        // prod
+        // target: 'https://web-prod.xgqfrms.xyz',
+      },
+    ],
+  },
+};
+
+module.exports = config;
+
+```
+
+2. control env
+
+```sh
+# global install
+$ yarn global add app-node-env
+
+# APP_ENV for webpack
+$ ane APP_ENV=dev
+# $ ane APP_ENV=prod
+
+```
 
 ```js
+// webpack.config.js
 const APP_ENV = require('./env.js');
 
 console.log('APP_ENV =', APP_ENV);
@@ -78,37 +119,7 @@ module.exports = config;
 
 ```
 
-2. custom dev port
-
-```js
-const ENV_PORT = require('./env.js');
-
-console.log('ENV_PORT =', ENV_PORT);
-
-// const ip = require('ip');
-// const hostIp = ip.address();
-const config = {
-  // ...
-  devServer: {
-    // ...
-    // host: hostIp,
-    port: ENV_PORT || 8080,
-    proxy: [
-      {
-        context: ['/web/api/'],
-        // dev
-        target: 'https://web-dev.xgqfrms.xyz',
-        // prod
-        // target: 'https://web-prod.xgqfrms.xyz',
-      },
-    ],
-  },
-};
-
-module.exports = config;
-
-```
-
+## CJS
 
 > node.js module
 
