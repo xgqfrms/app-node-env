@@ -74,13 +74,23 @@ if (!args[0]) {
 
 let defaultTemplate = ``;
 let envTemplate = ``;
+// ES5
 if (isPureNumber(env)) {
-  defaultTemplate = `// default\nconst ${key} = ${env};\nexport default ${key};\n`;
-  envTemplate = `// 🎉\nconst ${key} = ${env};\nexport default ${key};\n`;
+  defaultTemplate = `// default\nconst ${key} = ${env};\nmodule.exports = ${key};\n`;
+  envTemplate = `// 🎉\nconst ${key} = ${env};\nmodule.exports = ${key};\n`;
 } else {
-  defaultTemplate = `// default\nconst ${key} = '${env}';\nexport default ${key};\n`;
-  envTemplate = `// 🎉\nconst ${key} = '${env}';\nexport default ${key};\n`;
+  defaultTemplate = `// default\nconst ${key} = '${env}';\nmodule.exports = ${key};\n`;
+  envTemplate = `// 🎉\nconst ${key} = '${env}';\nmodule.exports = ${key};\n`;
 }
+
+// ES6
+// if (isPureNumber(env)) {
+//   defaultTemplate = `// default\nconst ${key} = ${env};\nexport default ${key};\n`;
+//   envTemplate = `// 🎉\nconst ${key} = ${env};\nexport default ${key};\n`;
+// } else {
+//   defaultTemplate = `// default\nconst ${key} = '${env}';\nexport default ${key};\n`;
+//   envTemplate = `// 🎉\nconst ${key} = '${env}';\nexport default ${key};\n`;
+// }
 
 // console.log('defaultTemplate =', defaultTemplate);
 // console.log('envTemplate =', envTemplate);
