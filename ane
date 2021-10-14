@@ -65,6 +65,10 @@ if (!args[0]) {
   key = tempArr[0] || 'APP_ENV';
   env = isPureNumber(tempArr[1]) ? parseInt(tempArr[1]) : tempArr[1];
   // console.log('isPureNumber(tempArr[1])', isPureNumber(tempArr[1]), env, typeof env);
+  // TODO: for 循环 读取多组 env
+  // 拼接
+  // PORT_ENV=666 && npm run dev
+  // 直接执行 PORT_ENV=666 node ./env-test.js
 }
 
 // env = isPureNumber(env) ? env : `${env}`;
