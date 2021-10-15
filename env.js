@@ -7,12 +7,20 @@
 // module.exports = process.env.PORT_ENV || 8080;
 
 // multi envs
+// module.exports = {
+//   PORT_ENV: process.env.PORT_ENV || 8080,
+//   PROXY_ENV: process.env.PROXY_ENV || 'dev',
+// };
+
 module.exports = {
-  PORT_ENV: process.env.PORT_ENV || 8080,
-  PROXY_ENV: process.env.PROXY_ENV || 'dev',
+  ...process.env,
 };
 
-// module.exports.env = process.env,
+// module.exports = {
+//   env: process.env,
+// };
+
+// module.exports.env = process.env;
 
 // all envs ❌
 // module.exports = {
