@@ -15,6 +15,11 @@ console.log('ENV.PROXY_ENV =', ENV.PROXY_ENV);
 console.log('\nprocess.env.PORT_ENV =', process.env.PORT_ENV);
 console.log('process.env.PROXY_ENV =', process.env.PROXY_ENV);
 
+const proxy = (process.env.PROXY_ENV === 'pre') ?  'https://pre.xgqfrms.xyz' : 'https://app.xgqfrms.xyz';
+
+console.log('webpack proxy =', proxy);
+
+
 // 临时 current child process env
 // PORT_ENV=666 node ./env-test.js
 
