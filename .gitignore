@@ -61,4 +61,4 @@ typings/
 .next
 .DS_Store
 
-env.js
+# env.js
