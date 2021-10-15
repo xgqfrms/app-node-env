@@ -2,7 +2,36 @@
 // const env = process.env.PORT_ENV || 8080;
 // module.exports = env;
 
-module.exports = process.env.PORT_ENV || 8080;
+
+// single env
+// module.exports = process.env.PORT_ENV || 8080;
+
+// multi envs
+module.exports = {
+  PORT_ENV: process.env.PORT_ENV || 8080,
+  PROXY_ENV: process.env.PROXY_ENV || 'dev',
+};
+
+// module.exports.env = process.env,
+
+// all envs ❌
+// module.exports = {
+//   ...process.env,
+// };
+
+
+/*
+
+$ PORT_ENV=777 PROXY_ENV=pre node ./env-test.js
+
+ENV = { PORT_ENV: '777', PROXY_ENV: 'pre' }
+process.env.PORT_ENV = 777
+process.env.PROXY_ENV = pre
+
+*/
+
+
+
 
 /*
 
