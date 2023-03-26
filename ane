@@ -21,85 +21,8 @@
  *
  */
 
-const packageInfo = require("./package.json");
 
-const fs = require("fs");
+// 根据 --type=esm(默认)/--type=cjs, 动态加载执行对应的 shell 脚本
 
-const {
-  version,
-  argv,
-  // versions,
-  // arch,
-  // platform,
-  // env,
-} = process;
 
-// v12.18.0
-console.log('\n🚀 your node.js version =', version.substring(1).split('.')[0]);
-
-// const args = process.argv.slice(2) || [];
-const args = argv.slice(2) || [];
-
-const filename = "./env.js";
-
-const isPureNumber = (str = '') => {
-  const numberDict = [...''.padEnd(10, 'x')].map((_, i) => `${i}`);
-  const arr = `${str}`.split('');
-  return arr.every(item => numberDict.includes(item));
-}
-
-let key = "";
-let env = "";
-
-if (!args[0]) {
-  args[0] = "";
-  console.log(`📦 version = ${packageInfo.version}`);
-  key = 'APP_ENV';
-  env = 'dev';
-} else {
-  const tempArr = args[0].split('=');
-  key = tempArr[0] || 'APP_ENV';
-  env = isPureNumber(tempArr[1]) ? parseInt(tempArr[1]) : tempArr[1];
-}
-
-let defaultTemplate = ``;
-let envTemplate = ``;
-
-// ES5
-if (isPureNumber(env)) {
-  defaultTemplate = `// default\nconst ${key} = ${env};\nmodule.exports = ${key};\n`;
-  envTemplate = `// 🎉\nconst ${key} = ${env};\nmodule.exports = ${key};\n`;
-} else {
-  defaultTemplate = `// default\nconst ${key} = '${env}';\nmodule.exports = ${key};\n`;
-  envTemplate = `// 🎉\nconst ${key} = '${env}';\nmodule.exports = ${key};\n`;
-}
-
-// ES6
-// if (isPureNumber(env)) {
-//   defaultTemplate = `// default\nconst ${key} = ${env};\nexport default ${key};\n`;
-//   envTemplate = `// 🎉\nconst ${key} = ${env};\nexport default ${key};\n`;
-// } else {
-//   defaultTemplate = `// default\nconst ${key} = '${env}';\nexport default ${key};\n`;
-//   envTemplate = `// 🎉\nconst ${key} = '${env}';\nexport default ${key};\n`;
-// }
-
-console.log('\n🎮 creating...');
-
-fs.open(filename, "r", (err, fd) => {
-  if (err) {
-    fs.writeFile(filename, defaultTemplate, (err, fd) => {
-      if (err) {
-        console.log(`writeFile err =`, err);
-      }
-    });
-  } else {
-    fs.writeFile(filename, envTemplate, (err, fd) => {
-      if (err) {
-        console.log(`writeFile err =`, err);
-      }
-    });
-  }
-});
-
-console.log('\n🎉 finished!');
 
