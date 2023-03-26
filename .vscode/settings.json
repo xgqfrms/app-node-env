@@ -1,4 +1,3 @@
-// 将设置放入此文件中以覆盖默认设置
 {
     "files.exclude": {
         "**/.git": true,
@@ -21,12 +20,11 @@
     "editor.formatOnSave": false,
     "editor.renderWhitespace": "all",
     "editor.fontSize": 16,
-    "editor.tabSize": 4,
+    "editor.tabSize": 2,
     "editor.multiCursorModifier": "alt",
     "editor.wordWrap": "on",
     "editor.insertSpaces": true,
     "files.encoding": "utf8",
-    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe",
     "[typescript]": {
         "editor.formatOnSave": true,
         "editor.formatOnPaste": true

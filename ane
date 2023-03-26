@@ -4,11 +4,20 @@
  *
  * @author xgqfrms
  * @license MIT
- * @copyright xgqfrms 2019.05.12
+ * @copyright xgqfrms
+ * @created 2019.05.12
+ * @modified 2023-03-26
  *
- * @description APP_ENV Genarator
+ * @description APP_ENV Generator
+ * @difficulty Easy
+ * @time_complexity O(n)
+ * @space_complexity O(n)
  * @augments
- * @example node env-generator.js env=dev
+ * @example node ./env-generator.js APP_ENV=dev
+ * @link
+ * @solutions
+ *
+ * @best_solutions
  *
  */
 
@@ -26,7 +35,7 @@ const {
 } = process;
 
 // v12.18.0
-console.log('\n🚀 your node.js version =', version.substr(1).split('.')[0]);
+console.log('\n🚀 your node.js version =', version.substring(1).split('.')[0]);
 
 // const args = process.argv.slice(2) || [];
 const args = argv.slice(2) || [];
@@ -34,50 +43,28 @@ const args = argv.slice(2) || [];
 const filename = "./env.js";
 
 const isPureNumber = (str = '') => {
-  // [...''.padEnd(10, 'x')].map((item, i) => i);
-  // (10) [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-  // [...''.padEnd(10, 'x')].map((item, i) => `${i}`);
-  // (10) ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-  const numberDict = [...''.padEnd(10, 'x')].map((item, i) => `${i}`);
+  const numberDict = [...''.padEnd(10, 'x')].map((_, i) => `${i}`);
   const arr = `${str}`.split('');
   return arr.every(item => numberDict.includes(item));
-  // arr.every(item => {
-  //   console.log('item', item, dict, dict.includes(item))
-  //   return dict.includes(item);
-  // });
 }
 
 let key = "";
 let env = "";
+
 if (!args[0]) {
   args[0] = "";
-  // console.log('ane version =', packageInfo.version);
-  // echo `version = ${packageInfo.version}`;
-  console.log(`version = ${packageInfo.version}`);
+  console.log(`📦 version = ${packageInfo.version}`);
   key = 'APP_ENV';
   env = 'dev';
 } else {
-  // echo `version = ${packageInfo.version}`;
-  // console.log('ane version =', packageInfo, packageInfo.version);
-  // env = args[0].substr(4);
   const tempArr = args[0].split('=');
-  // key = tempArr[0] ?? 'APP_ENV';
   key = tempArr[0] || 'APP_ENV';
   env = isPureNumber(tempArr[1]) ? parseInt(tempArr[1]) : tempArr[1];
-  // console.log('isPureNumber(tempArr[1])', isPureNumber(tempArr[1]), env, typeof env);
-  // TODO: for 循环 读取多组 env
-  // 拼接
-  // PORT_ENV=666 && npm run dev
-  // 直接执行 PORT_ENV=666 node ./env-test.js
 }
-
-// env = isPureNumber(env) ? env : `${env}`;
-// env = isPureNumber(env) ? env : env.toString();
-
-// console.log('env =', env, typeof env);
 
 let defaultTemplate = ``;
 let envTemplate = ``;
+
 // ES5
 if (isPureNumber(env)) {
   defaultTemplate = `// default\nconst ${key} = ${env};\nmodule.exports = ${key};\n`;
@@ -96,20 +83,6 @@ if (isPureNumber(env)) {
 //   envTemplate = `// 🎉\nconst ${key} = '${env}';\nexport default ${key};\n`;
 // }
 
-// console.log('defaultTemplate =', defaultTemplate);
-// console.log('envTemplate =', envTemplate);
-
-// const defaultTemplate = `
-// // default
-// const ${key} = ${env};
-// export default ${key};
-// `;
-
-// const envTemplate = `
-// // 🎉
-// const ${key} = ${env};
-// export default ${key};
-// `;
 console.log('\n🎮 creating...');
 
 fs.open(filename, "r", (err, fd) => {

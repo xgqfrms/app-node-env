@@ -1,65 +1,51 @@
-// default
-// const env = process.env.PORT_ENV || 8080;
-// module.exports = env;
+
+// import("./ane-cjs.cjs").then();
+// import("./ane-esm.mjs").then();
 
 
-// single env ✅
-// module.exports = process.env.PORT_ENV || 8080;
+// const packageInfo = require("./package.json");
 
-// multi envs ✅
-// module.exports = {
-//   PORT_ENV: process.env.PORT_ENV || 8080,
-//   PROXY_ENV: process.env.PROXY_ENV || 'dev',
-// };
-
-
-
-// all envs ✅
-module.exports = {
-  ...process.env,
-};
-// module.exports = process.env;
-
-// module.exports = {
-//   env: process.env,
-// };
-
-// module.exports.env = process.env;
-
+import * as pkg from "./package.json" assert { type: "json" };
 
 /*
 
-$ PORT_ENV=777 PROXY_ENV=pre node ./env-test.js
-
-ENV = { PORT_ENV: '777', PROXY_ENV: 'pre' }
-process.env.PORT_ENV = 777
-process.env.PROXY_ENV = pre
+(node:33503) ExperimentalWarning: Importing JSON modules is an experimental feature. This feature could change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
 
 */
 
-
-
+// import * as pkg from "./package.json";
 
 /*
 
-// 单个 process 直接执行 ✅
-
-$ PORT_ENV=777 node ./env-test.js
-PORT_ENV = 666
-process.env.PORT_ENV = 666
+TypeError [ERR_IMPORT_ASSERTION_TYPE_MISSING]: Module "file:///Users/xgqfrms-mm/Documents/github/app-node-env/package.json" needs an import assertion of type "json"
 
 */
 
+console.log(`pkg `, pkg);
 
-/*
+// console.log(`process `, process);
 
-// && 多个 process ❌
+// process.env
+// console.log(`process.env`, process.env);
 
-$ PORT_ENV=777
-$ node ./env-test.js
-PORT_ENV = 8080
-process.env.PORT_ENV = undefined
+// args
+console.log(`process.argv`, process.argv);
 
+let key = `APP_ENV`;
+let value = `dev`;
 
-*/
+const args = process.argv.slice(2);
+console.log(`args =`, args);
 
+if (args[0]) {
+  if(args[0].split(`=`)[0]) {
+    key = args[0].split(`=`)[0];
+  }
+  if(args[0].split(`=`)[1]) {
+    value = args[0].split(`=`)[1];
+  }
+}
+
+console.log(`key =`, key);
+console.log(`value =`, value);

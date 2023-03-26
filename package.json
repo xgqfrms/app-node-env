@@ -1,32 +1,43 @@
 {
   "name": "app-node-env",
-  "version": "1.4.7",
+  "version": "2.0.0",
   "description": "APP_ENV replace for NODE_ENV",
   "author": "xgqfrms",
+  "type": "module",
+  "scripts": {
+    "app": "npm run clear && tsc ./src/index.ts",
+    "dev": "npx ts-node ./src/index.ts",
+    "clear": "rimraf ./dist",
+    "ane": "ane"
+  },
+  "bin": {
+    "ane": "ane"
+  },
+  "main": "./build/index.min.js",
+  "exports": {
+    "default": "./dist/index.min.js",
+    "import": "./dist/index.min.mjs",
+    "require": "./build/index.min.cjs"
+  },
+  "files": [
+    "dist/index.min.js",
+    "dist/index.min.mjs",
+    "dist/index.min.cjs",
+    "ane",
+    ".editorconfig",
+    "package.json",
+    "LICENSE",
+    "README.md"
+  ],
   "license": "MIT",
   "keywords": [
     "APP_ENV",
     "ENV",
     "NODE_ENV",
     "app node env",
+    "cli",
+    "xgqfrms",
     "ane"
-  ],
-  "scripts": {
-    "ane": "ane"
-  },
-  "bin": {
-    "ane": "ane"
-  },
-  "main": "build/index.min.js",
-  "files": [
-    "build/index.min.js",
-    "testing/*",
-    "ane",
-    "env.js",
-    ".editorconfig",
-    "package.json",
-    "LICENSE",
-    "README.md"
   ],
   "homepage": "https://app-node-env.xgqfrms.xyz/index.html#readme",
   "repository": {
